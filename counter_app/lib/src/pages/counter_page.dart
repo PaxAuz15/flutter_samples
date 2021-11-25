@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget{
+class CounterPage extends StatefulWidget {
 
-  final TextStyle styleText = const TextStyle(fontSize: 25);
-  final int valueCounter = 10;
+  @override
+  createState()=> _CounterPageState();
+
+}
+
+class _CounterPageState extends State<CounterPage> {
+
+  final TextStyle _styleText = const TextStyle(fontSize: 25);
+  int _valueCounter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +27,12 @@ class HomePage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Numbers click:",
-              style: styleText,
+              "Click numbers:",
+              style: _styleText,
             ),
             Text(
-              "$valueCounter",
-              style: styleText,
+              "$_valueCounter",
+              style: _styleText,
             )
           ],
         )
@@ -33,12 +40,14 @@ class HomePage extends StatelessWidget{
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: (){
-          print("Hola Mundo");
-          // valueCounter = valueCounter + 1;
+          setState(() {
+            _valueCounter++;            
+          });
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
     // throw UnimplementedError();
   }
+
 }
