@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'package:counter_app/src/pages/home_page.dart';
+
+
 class MyApp extends StatelessWidget{
   
   @override
   Widget build(context){
-    return const MaterialApp(
-      home: Center(child: Text("Hola Mundo",textAlign: TextAlign.center,
-      ),
+    return MaterialApp(
+      home: Center(
+        child: HomePage(),
       )
     );
   }
