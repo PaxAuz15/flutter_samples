@@ -1,17 +1,10 @@
+import 'package:counter_app/src/app.dart';
 import 'package:flutter/material.dart';
+
+// import 'src/app.dart';
 
 void main(){
 
   runApp(MyApp());
 
-}
-
-class MyApp extends StatelessWidget{
-  
-  @override
-  Widget build(context){
-    return MaterialApp(
-      home: Center(child: Text("PaxAuz",textAlign: TextAlign.center,),)
-    );
-  }
 }
