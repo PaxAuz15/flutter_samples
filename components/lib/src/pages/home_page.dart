@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Components Theme"),
+        title: const Text("Components Theme"),
         centerTitle: true,
       ),
       body: _list(),
@@ -41,10 +41,11 @@ class HomePage extends StatelessWidget {
         leading: getIcon(element["icon"]),
         trailing: const Icon(Icons.keyboard_arrow_right,color: Colors.blue,),
         onTap: (){
-          final route = MaterialPageRoute(
-            builder: (context)=>AlertPage()
-          );
-          Navigator.push(context!, route);
+          // final route = MaterialPageRoute(
+          //   builder: (context)=>AlertPage()
+          // );
+          // Navigator.push(context!, route);
+          Navigator.pushNamed(context!, element["ruta"]);
         },
       );
 
