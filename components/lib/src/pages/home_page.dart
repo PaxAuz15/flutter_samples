@@ -33,12 +33,13 @@ class HomePage extends StatelessWidget {
     data!.forEach((element) {
       final widgetTemp = ListTile(
         title: Text(element["texto"]),
-        leading: Icon(Icons.account_balance_wallet,color: Colors.blue,),
-        trailing: Icon(Icons.trending_flat_sharp,color: Colors.blue,),
+        leading: const Icon(Icons.account_circle,color: Colors.blue,),
+        trailing: const Icon(Icons.keyboard_arrow_right,color: Colors.blue,),
+        onTap: (){},
       );
 
       options..add(widgetTemp)
-             ..add(Divider());
+             ..add(const Divider());
     });
     return options;
   }
