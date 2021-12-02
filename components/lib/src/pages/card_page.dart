@@ -11,7 +11,9 @@ class CardPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(10.0),
         children: [
-          _card()
+          _card(),
+          const SizedBox(height: 10.0,),
+          _imageCard(),
         ],
       ),
     );
@@ -41,6 +43,26 @@ class CardPage extends StatelessWidget {
           )
         ],
       ), 
+    );
+  }
+
+  Widget _imageCard() {
+    return Card(
+      child: Column(
+        children: [
+          const FadeInImage(
+            placeholder: AssetImage("assets/jar-loading.gif"),
+            image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg"),
+            fit: BoxFit.cover,
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300.0,
+          ),
+          Container(
+            child: const Text("Description Image"),
+            padding: const EdgeInsets.all(10.0),
+          )
+        ],
+      ),
     );
   }
 }
